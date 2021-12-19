@@ -36,7 +36,6 @@ class General extends Component {
             onChange={onInputChange}
           />
         </div>
-        <p>{name} {email} {phone}</p>
       </div>
     );
   };
