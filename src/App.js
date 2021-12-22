@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
+import Header from './components/Header';
 import Education from './components/Education';
 import General from './components/General'
-import Experience from './Experience';
+import Experience from './components/Experience';
+import Preview from './components/Preview';
+import './styles/App.css';
 
 class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
+      preview: false,
       name: '',
       email: '',
       phone: '',
@@ -16,18 +20,24 @@ class App extends Component {
       studyDate: '',
       company: '',
       position: '',
-      tasks: '',
       leaveDate: '',
     }
   }
 
   onSubmitForm = (e) => {
     e.preventDefault();
-    console.log(this.state)
+    this.setState({
+      preview: true
+    });
+    console.log(this.state);
   };
 
   onEditForm = (e) => {
     e.preventDefault();
+    this.setState({
+      preview: false
+    });
+    console.log(this.state);
   };
 
   handleChange = (e) => {
@@ -37,39 +47,50 @@ class App extends Component {
   };
 
   render() {
+    const { preview } = this.state;
     const { name, email, phone } = this.state;
     const { school, degree, studyDate } = this.state;
-    const { company, position, tasks, leaveDate } = this.state;
-    return (
-      <div>
-        <form>
-          <General
+    const { company, position, leaveDate } = this.state;
+    if (preview) {
+      return (
+        <div>
+          <Header />
+          <Preview
             name={name}
-            email={email}
-            phone={phone}
-            onInputChange={this.handleChange}
+            editBtn={this.onEditForm}
           />
-          <Education
-            school={school}
-            degree={degree}
-            studyDate={studyDate}
-            onInputChange={this.handleChange}
-          />
-          <Experience
-            company={company}
-            position={position}
-            tasks={tasks}
-            leaveDate={leaveDate}
-            onInputChange={this.handleChange}
-          />
-          <button type='submit' onClick={this.onEditForm}>Edit</button>
-          <button type='submit' onClick={this.onSubmitForm}>Submit</button>
-        </form>
-        <p>{name} {email} {phone}</p>
-        <p>{school} {degree} {studyDate}</p>
-        <p>{company} {position} {tasks} {leaveDate}</p>
-      </div>
-    )
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <Header />
+          <div className='main'>
+            <form className='container' onSubmit={this.onSubmitForm}>
+              <General
+                name={name}
+                email={email}
+                phone={phone}
+                onInputChange={this.handleChange}
+              />
+              <Education
+                school={school}
+                degree={degree}
+                studyDate={studyDate}
+                onInputChange={this.handleChange}
+              />
+              <Experience
+                company={company}
+                position={position}
+                leaveDate={leaveDate}
+                onInputChange={this.handleChange}
+              />
+              <button className='previewBtn' type='submit'>Preview</button>
+            </form>
+          </div>
+        </div>
+      );
+    }
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Education extends Component {
+class Experience extends Component {
   constructor(props) {
     super(props)
 
@@ -22,39 +22,39 @@ class Education extends Component {
   };
 
   render() {
-    const { school, degree, studyDate, onInputChange } = this.props;
+    const { company, position, leaveDate, onInputChange } = this.props;
     return (
       <div className='form-control'>
-        <p>Education</p>
+        <p>Work Experience</p>
         <div>
-          <label htmlFor='school'></label>
+          <label htmlFor='company'></label>
           <input
-            placeholder='School Name'
+            placeholder='Company Name'
             type='text'
-            id='school'
-            value={school}
+            id='company'
+            value={company}
             onChange={onInputChange}
           />
         </div>
         <div>
-          <label htmlFor='degree'></label>
+          <label htmlFor='position'></label>
           <input
-            placeholder='Title of Study'
+            placeholder='Position Title'
             type='text'
-            id='degree'
-            value={degree}
+            id='position'
+            value={position}
             onChange={onInputChange}
           />
         </div>
         <div>
-          <label htmlFor='studyDate'></label>
+          <label htmlFor='leaveDate'></label>
           <input
-            placeholder='Study Date'
+            placeholder='Date you left the company'
             type={this.state.type}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
-            id='studyDate'
-            value={studyDate}
+            id='leaveDate'
+            value={leaveDate}
             onChange={onInputChange}
           />
         </div>
@@ -63,4 +63,4 @@ class Education extends Component {
   }
 }
 
-export default Education;
+export default Experience;

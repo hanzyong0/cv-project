@@ -8,10 +8,12 @@ class General extends Component {
   render() {
     const { name, email, phone, onInputChange } = this.props;
     return (
-      <div>
+      <div className='form-control'>
+        <p>Personal Information</p>
         <div>
-          <label htmlFor='name'>Name: </label>
+          <label htmlFor='name'></label>
           <input
+            placeholder='Name'
             type='text'
             id='name'
             value={name}
@@ -19,8 +21,9 @@ class General extends Component {
           />
         </div>
         <div>
-          <label htmlFor='email'>Email: </label>
+          <label htmlFor='email'></label>
           <input
+            placeholder='Email'
             type='email'
             id='email'
             value={email}
@@ -28,8 +31,9 @@ class General extends Component {
           />
         </div>
         <div>
-          <label htmlFor='phone'>Phone Number: </label>
+          <label htmlFor='phone'></label>
           <input
+            placeholder='Phone Number'
             type='tel'
             id='phone'
             value={phone}
