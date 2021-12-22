@@ -1,0 +1,79 @@
+.main-cv {
+	background-color: #ccc;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	padding-bottom: 30px;
+}
+
+.cv {
+	width: 210mm;
+	height: 297mm;
+	background-color: #eee;
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	margin: 20px;
+	padding: 50px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.first {
+	padding-bottom: 15px;
+	gap: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-bottom: 0.5px solid black;
+}
+
+.name {
+	font-size: 2em;
+	font-weight: 600;
+}
+
+.first p {
+	font-size: 1.4em;
+	font-weight: 500;
+}
+
+.second {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+
+.edu-container,
+.exp-container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.edu-title,
+.exp-title {
+	border-bottom: 0.5px solid #aaa;
+	font-size: 1.3em !important;
+}
+
+.edu-container div,
+.exp-container div {
+	font-size: 1em;
+}
+
+.edu-container div p,
+.exp-container div p {
+	font-size: 1.4em;
+}
+
+.editBtn {
+	width: 210mm;
+	padding: 5px;
+	font-size: 1em;
+	font-weight: 500;
+}
+
+.editBtn:hover {
+	background-color: #ccc;
+}

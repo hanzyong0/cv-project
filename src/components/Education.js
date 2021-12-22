@@ -22,7 +22,7 @@ class Education extends Component {
   };
 
   render() {
-    const { school, degree, studyDate, onInputChange } = this.props;
+    const { school, degree, studyStartDate, studyEndDate, onInputChange } = this.props;
     return (
       <div className='form-control'>
         <p>Education</p>
@@ -47,14 +47,26 @@ class Education extends Component {
           />
         </div>
         <div>
-          <label htmlFor='studyDate'></label>
+          <label htmlFor='studyStartDate'></label>
           <input
-            placeholder='Study Date'
+            placeholder='Study Start Date'
             type={this.state.type}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
-            id='studyDate'
-            value={studyDate}
+            id='studyStartDate'
+            value={studyStartDate}
+            onChange={onInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor='studyEndDate'></label>
+          <input
+            placeholder='Study End Date'
+            type={this.state.type}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            id='studyEndDate'
+            value={studyEndDate}
             onChange={onInputChange}
           />
         </div>

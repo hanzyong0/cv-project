@@ -5,6 +5,7 @@ import General from './components/General'
 import Experience from './components/Experience';
 import Preview from './components/Preview';
 import './styles/App.css';
+import './styles/Preview.css';
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +18,8 @@ class App extends Component {
       phone: '',
       school: '',
       degree: '',
-      studyDate: '',
+      studyStartDate: '',
+      studyEndDate: '',
       company: '',
       position: '',
       leaveDate: '',
@@ -29,7 +31,6 @@ class App extends Component {
     this.setState({
       preview: true
     });
-    console.log(this.state);
   };
 
   onEditForm = (e) => {
@@ -37,7 +38,6 @@ class App extends Component {
     this.setState({
       preview: false
     });
-    console.log(this.state);
   };
 
   handleChange = (e) => {
@@ -49,21 +49,30 @@ class App extends Component {
   render() {
     const { preview } = this.state;
     const { name, email, phone } = this.state;
-    const { school, degree, studyDate } = this.state;
+    const { school, degree, studyStartDate, studyEndDate } = this.state;
     const { company, position, leaveDate } = this.state;
     if (preview) {
       return (
-        <div>
+        <div className='app'>
           <Header />
           <Preview
             name={name}
+            email={email}
+            phone={phone}
+            school={school}
+            degree={degree}
+            studyStartDate={studyStartDate}
+            studyEndDate={studyEndDate}
+            company={company}
+            position={position}
+            leaveDate={leaveDate}
             editBtn={this.onEditForm}
           />
         </div>
       );
     } else {
       return (
-        <div>
+        <div className='app'>
           <Header />
           <div className='main'>
             <form className='container' onSubmit={this.onSubmitForm}>
@@ -76,7 +85,8 @@ class App extends Component {
               <Education
                 school={school}
                 degree={degree}
-                studyDate={studyDate}
+                studyStartDate={studyStartDate}
+                studyEndDate={studyEndDate}
                 onInputChange={this.handleChange}
               />
               <Experience
