@@ -29,8 +29,8 @@
 }
 
 .name {
-	font-size: 2em;
-	font-weight: 600;
+	font-size: 2.5em;
+	font-weight: 800;
 }
 
 .first p {
@@ -54,7 +54,8 @@
 .edu-title,
 .exp-title {
 	border-bottom: 0.5px solid #aaa;
-	font-size: 1.3em !important;
+	font-size: 1.5em !important;
+	font-weight: 600;
 }
 
 .edu-container div,
